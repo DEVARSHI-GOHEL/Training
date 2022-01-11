@@ -162,6 +162,21 @@ ON Books.AuthorId = Authors.Id
 INNER JOIN Categories
 ON BOOKS.CategoryId = CATEGORIES.ID
 
+-- Left join
+SELECT BOOKS.NAME AS 'BOOK NAME', AUTHORS.NAME AS 'AUTHOR NAME' FROM BOOKS
+LEFT JOIN AUTHORS
+ON Books.AuthorId = Authors.Id
+
+-- Right join
+SELECT BOOKS.NAME AS 'BOOK NAME', AUTHORS.NAME AS 'AUTHOR NAME' FROM BOOKS
+RIGHT JOIN AUTHORS
+ON Books.AuthorId = Authors.Id
+
+-- Full outer join
+SELECT BOOKS.NAME AS 'BOOK NAME', AUTHORS.NAME AS 'AUTHOR NAME' FROM BOOKS
+FULL OUTER JOIN AUTHORS
+ON Books.AuthorId = Authors.Id
+
 SELECT * FROM BOOKS
 
 -- Here the price column has datatype of int and when we try to put string in it we get an error
