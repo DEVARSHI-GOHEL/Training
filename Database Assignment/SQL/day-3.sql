@@ -8,7 +8,7 @@ SELECT MIN(PRICE) FROM BOOKS
 
 SELECT AVG(PRICE) FROM BOOKS
 
-ALTER FUNCTION price(
+alter FUNCTION price(
     @book_price INT,
     @discount INT
 )
@@ -18,7 +18,7 @@ BEGIN
     RETURN @book_price * @discount / 100;
 END;
 
-SELECT price(100, 10) as 'Discount';
+SELECT dbo.price(100, 10) as 'Discount';
 
 
 BEGIN TRANSACTION

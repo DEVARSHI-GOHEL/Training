@@ -1,0 +1,65 @@
+To open MongoDb command prompt
+> mongo
+
+To display databases
+> db
+
+To create or use existing database
+> use 'NameOfDb'
+> use Demo
+
+To create a collection
+> db.createCollection('test')
+
+To insert one row into collection
+> db.test.insert({
+	'name' : 'Dev',
+	'last_name' : 'Gohel',
+	'works_as' : 'Software Developer',
+	'dob' : '30/01/2001',
+})
+
+To insert multiple rows 
+> db.test.insertMany([{
+	'name' : 'Rushi',
+	'last_name' : 'Pandya',
+	'age' : '21',
+	'degree' : 'B.tech'},
+	{
+	'name' : 'Dhairya',
+	'last_name' : 'Bakhai',
+	'college' : 'Darshan'
+	},
+	{
+	'name' : 'Veer',
+	'last_name' : 'Yagnik',
+	'works_as' : 'Jr. Software Developer'
+	}
+])
+
+To display the result on the shell
+> db.test.find()
+
+To display the result on the shell in readable format
+> db.test.find().pretty()
+
+To update a data-item
+> db.test.update({name : 'Dhairya'},
+{
+	'name' : 'Kishan'
+})
+
+To display the number of items in collection
+> db.test.count()
+
+To find a certain value
+> db.test.find({'worked_as' : 'Software Developer'})
+
+To delete an entry 
+> db.test.remove({name : 'Veer'})
+
+To set a item as index
+> db.test.createIndex({name : 1})
+
+To drop a collection
+> db.test.drop()
