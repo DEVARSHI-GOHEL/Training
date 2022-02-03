@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Admin Panel</title>
+</head>
+
+<body>
+
+    <div class="container-fluid mt-2" style="height:auto;">
+        <div class="row">
+            <!-- Side navbar -->
+            <div class="col-md-2 mr-auto">
+                <div class="d-flex flex-column bg-light"
+                    style="width: 200px; height: auto; overflow-y:hidden; z-index: 1000; position: fixed;">
+                    <ul class="nav flex-column mb-auto">
+                        <li class="nav-item">
+                            <a id="linkHome" href="#home" class="nav-link link-dark text-secondary"
+                                onclick="setVisibility(4)">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#candidate" class="nav-link text-secondary link-dark" onclick="setVisibility(1)">
+                                Candidates
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#invoice" class="nav-link text-secondary link-dark" onclick="setVisibility(2)">
+                                Invoices
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#report" class="nav-link text-secondary link-dark" onclick="setVisibility(3)">
+                                Reports
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contacts" class="nav-link text-secondary link-dark" onclick="setVisibility(5)">
+                                Contacts
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Main content page -->
+            <div class="col-md-10 ml-auto" style="overflow:hidden ;">
+                <main role="main" class="px-4" id="main" style="height: auto;">
+                    <div class="home" id="home">
+                        <h2 class="text-info">Home</h2>
+                        <hr>
+                        <section class="py-5 bg-light" id="scroll-target">
+                            <div class="container px-5 my-5">
+                                <div class="row gx-5 align-items-center">
+                                    <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0"
+                                            src="https://dummyimage.com/600x400/343a40/6c757d" alt="..."></div>
+                                    <div class="col-lg-6">
+                                        <h2 class="fw-bolder">Our founding</h2>
+                                        <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Iusto est, ut esse a labore aliquam beatae expedita.
+                                            Blanditiis impedit numquam libero molestiae et fugit cupiditate, quibusdam
+                                            expedita, maiores eaque quisquam.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="py-5">
+                            <div class="container px-5 my-5">
+                                <div class="row gx-5 align-items-center">
+                                    <div class="col-lg-6 order-first order-lg-last"><img
+                                            class="img-fluid rounded mb-5 mb-lg-0"
+                                            src="https://dummyimage.com/600x400/343a40/6c757d" alt="..."></div>
+                                    <div class="col-lg-6">
+                                        <h2 class="fw-bolder">Growth &amp; beyond</h2>
+                                        <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Iusto est, ut esse a labore aliquam beatae expedita.
+                                            Blanditiis impedit numquam libero molestiae et fugit cupiditate, quibusdam
+                                            expedita, maiores eaque quisquam.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                    <div class="candidate" id="candidate" zzz style="display: none;">
+                        <h3 class="text-info">Candidates</h3>
+                        <hr>
+                        <table class="table table-secondary">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Position</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>Project Manager</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>JS developer</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>Bird</td>
+                                    <td>Back-end developer</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>Martin</td>
+                                    <td>Smith</td>
+                                    <td>Back-end developer</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Kate</td>
+                                    <td>Mayers</td>
+                                    <td>Scrum master</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="invoice" id="invoice" style="display:none;">
+                        <h3 class="text-info">Invoice</h3>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card m-1">
+                                    <div class="card-body bg-light">
+                                        <h5 class="card-title">Invoice #184382</h5>
+                                        <p class="card-text">Donec nec justo eget felis facilisis fermentum. Aliquam
+                                            porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
+                                        <a href="#" class="btn btn-primary">Print</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card m-1">
+                                    <div class="card-body bg-light">
+                                        <h5 class="card-title">Invoice #184386</h5>
+                                        <p class="card-text">Donec nec justo eget felis facilisis fermentum. Aliquam
+                                            porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
+                                        <a href="#" class="btn btn-primary">Print</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card m-1">
+                                    <div class="card-body bg-light">
+                                        <h5 class="card-title">Invoice #184389</h5>
+                                        <p class="card-text">Donec nec justo eget felis facilisis fermentum. Aliquam
+                                            porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
+                                        <a href="#" class="btn btn-primary">Print</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card m-1">
+                                    <div class="card-body bg-light">
+                                        <h5 class="card-title">Invoice #184391</h5>
+                                        <p class="card-text">Donec nec justo eget felis facilisis fermentum. Aliquam
+                                            porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
+                                        <a href="#" class="btn btn-primary">Print</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="report" id="report" style="display: none;">
+                        <h3 class="text-info">Reports</h3>
+                        <hr>
+                        <canvas id="myChart"></canvas>
+                    </div>
+                    <div class="contacts" id="contacts" style="display: none;">
+                        <h2 class="text-info">Contacts</h2>
+                        <hr>
+                        <section class="py-5 bg-light">
+                            <div class="container px-5 my-5">
+                                <div class="text-center">
+                                    <h2 class="fw-bolder">Our team</h2>
+                                    <p class="lead fw-normal text-muted mb-5">Dedicated to quality and your success</p>
+                                </div>
+                                <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+                                    <div class="col mb-5 mb-5 mb-xl-0">
+                                        <div class="text-center">
+                                            <img class="img-fluid rounded-circle mb-4 px-4"
+                                                src="https://dummyimage.com/150x150/ced4da/6c757d" alt="...">
+                                            <h5 class="fw-bolder">Ibbie Eckart</h5>
+                                            <div class="fst-italic text-muted">Founder &amp; CEO</div>
+                                        </div>
+                                    </div>
+                                    <div class="col mb-5 mb-5 mb-xl-0">
+                                        <div class="text-center">
+                                            <img class="img-fluid rounded-circle mb-4 px-4"
+                                                src="https://dummyimage.com/150x150/ced4da/6c757d" alt="...">
+                                            <h5 class="fw-bolder">Arden Vasek</h5>
+                                            <div class="fst-italic text-muted">CFO</div>
+                                        </div>
+                                    </div>
+                                    <div class="col mb-5 mb-5 mb-sm-0">
+                                        <div class="text-center">
+                                            <img class="img-fluid rounded-circle mb-4 px-4"
+                                                src="https://dummyimage.com/150x150/ced4da/6c757d" alt="...">
+                                            <h5 class="fw-bolder">Toribio Nerthus</h5>
+                                            <div class="fst-italic text-muted">Operations Manager</div>
+                                        </div>
+                                    </div>
+                                    <div class="col mb-5">
+                                        <div class="text-center">
+                                            <img class="img-fluid rounded-circle mb-4 px-4"
+                                                src="https://dummyimage.com/150x150/ced4da/6c757d" alt="...">
+                                            <h5 class="fw-bolder">Malvina Cilla</h5>
+                                            <div class="fst-italic text-muted">CTO</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var candidate = document.getElementById("candidate");
+        var invoice = document.getElementById("invoice");
+        var report = document.getElementById("report");
+        var home = document.getElementById("home");
+        var contacts = document.getElementById("contacts");
+
+        function createChart() {
+            var ctx = document.getElementById("myChart").getContext("2d");
+            var myChart = new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday",
+                        "Sunday",
+                    ],
+                    datasets: [
+                        {
+                            label: "work load",
+                            data: [2, 9, 3, 17, 6, 3, 7],
+                            backgroundColor: "rgba(153,205,1,0.6)",
+                        },
+                        {
+                            label: "free hours",
+                            data: [2, 2, 5, 5, 2, 1, 10],
+                            backgroundColor: "rgba(155,153,10,0.6)",
+                        },
+                    ],
+                },
+            });
+        }
+
+        function setVisibility(i) {
+
+            if (i == 1) {
+                invoice.style.visibility = 'hidden';
+                report.style.visibility = 'hidden';
+                home.style.visibility = "hidden";
+                contacts.style.visibility = "hidden";
+                candidate.style.visibility = 'Visible';
+                document.getElementById("main").innerHTML = candidate.innerHTML;
+            }
+
+            if (i == 2) {
+                candidate.style.visibility = 'hidden';
+                report.style.visibility = 'hidden';
+                home.style.visibility = "hidden";
+                contacts.style.visibility = "hidden";
+                invoice.style.visibility = 'visible';
+                document.getElementById("main").innerHTML = invoice.innerHTML;
+            }
+            if (i == 3) {
+                console.log(report)
+                candidate.style.visibility = 'hidden';
+                invoice.style.visibility = 'hidden';
+                home.style.visibility = "hidden";
+                contacts.style.visibility = "hidden";
+                report.style.visibility = 'visible';
+                document.getElementById("main").innerHTML = report.innerHTML;
+                createChart();
+            }
+            if (i == 4) {
+                candidate.style.visibility = 'hidden';
+                invoice.style.visibility = 'hidden';
+                report.style.visibility = 'hidden';
+                contacts.style.visibility = "visible";
+                home.style.visibility = "visible";
+                document.getElementById("main").innerHTML = home.innerHTML;
+            }
+            if (i == 5) {
+                candidate.style.visibility = 'hidden';
+                invoice.style.visibility = 'hidden';
+                report.style.visibility = 'hidden';
+                home.style.visibility = "hidden";
+                contacts.style.visibility = "visible";
+                document.getElementById("main").innerHTML = contacts.innerHTML;
+            }
+
+        }
+
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
+        integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
