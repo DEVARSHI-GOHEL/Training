@@ -1,252 +1,270 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>Admin Panel</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar" style="position:relative;">
 
-    <div class="container-fluid mt-2" style="height:auto;">
-        <div class="row">
-            <!-- Side navbar -->
-            <div class="col-md-2 mr-auto">
-                <div class="d-flex flex-column bg-light"
-                    style="width: 200px; height: auto; overflow-y:hidden; z-index: 1000; position: fixed;">
-                    <ul class="nav flex-column mb-auto">
-                        <li class="nav-item">
-                            <a id="linkHome" href="#home" class="nav-link link-dark text-secondary"
-                                onclick="setVisibility(4)">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#candidate" class="nav-link text-secondary link-dark" onclick="setVisibility(1)">
-                                Candidates
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#invoice" class="nav-link text-secondary link-dark" onclick="setVisibility(2)">
-                                Invoices
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#report" class="nav-link text-secondary link-dark" onclick="setVisibility(3)">
-                                Reports
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#contacts" class="nav-link text-secondary link-dark" onclick="setVisibility(5)">
-                                Contacts
-                            </a>
-                        </li>
-                    </ul>
+            <ul class="list-unstyled components" >
+                
+                <li class="mb-3">
+                    <a href="#home" class="text-light" onclick="setVisibility(4)">Home</a>
+                </li>
+                <li class="mb-3">
+                    <a href="#cadidates" class="text-light" onclick="setVisibility(1)">Candidates</a>
+                </li>
+                <li class="mb-3">
+                    <a href="#invoice" class="text-light" onclick="setVisibility(2)">Invoice</a>
+                </li>
+                <li class="mb-3">
+                    <a href="#report" class="text-light" onclick="setVisibility(3)">Report</a>
+                </li>
+                <li class="mb-3">
+                    <a href="#contact" class="text-light" onclick="setVisibility(5)">Contacts</a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="display: flex;">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                </div>
+            </nav>
+            <div id="main">
+                <div class="home" id="home">
+                    <h2 class="text-info text-center">Home</h2>
+                    <hr>
+                    <section class="py-5 bg-light" id="scroll-target">
+                        <div class="container px-5 my-5">
+                            <div class="row gx-5 align-items-center">
+                                <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0"
+                                        src="https://dummyimage.com/600x400/343a40/6c757d" alt="..."></div>
+                                <div class="col-lg-6">
+                                    <h2 class="fw-bolder">Our founding</h2>
+                                    <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Iusto est, ut esse a labore aliquam beatae expedita.
+                                        Blanditiis impedit numquam libero molestiae et fugit cupiditate, quibusdam
+                                        expedita, maiores eaque quisquam.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="py-5">
+                        <div class="container px-5 my-5">
+                            <div class="row gx-5 align-items-center">
+                                <div class="col-lg-6 order-first order-lg-last"><img
+                                        class="img-fluid rounded mb-5 mb-lg-0"
+                                        src="https://dummyimage.com/600x400/343a40/6c757d" alt="..."></div>
+                                <div class="col-lg-6">
+                                    <h2 class="fw-bolder">Growth &amp; beyond</h2>
+                                    <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Iusto est, ut esse a labore aliquam beatae expedita.
+                                        Blanditiis impedit numquam libero molestiae et fugit cupiditate, quibusdam
+                                        expedita, maiores eaque quisquam.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+    
+                </div>
+                <div class="candidate" id="candidate" zzz style="display: none;">
+                    <h3 class="text-info text-center">Candidates</h3>
+                    <hr>
+                    <table class="table table-secondary">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Position</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>Project Manager</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>JS developer</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>Bird</td>
+                                <td>Back-end developer</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Martin</td>
+                                <td>Smith</td>
+                                <td>Back-end developer</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Kate</td>
+                                <td>Mayers</td>
+                                <td>Scrum master</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="invoice" id="invoice" style="display:none;">
+                    <h3 class="text-info text-center">Invoice</h3>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card m-1">
+                                <div class="card-body bg-light">
+                                    <h5 class="card-title">Invoice #184382</h5>
+                                    <p class="card-text">Donec nec justo eget felis facilisis fermentum. Aliquam
+                                        porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
+                                    <a href="#" class="btn btn-primary">Print</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card m-1">
+                                <div class="card-body bg-light">
+                                    <h5 class="card-title">Invoice #184386</h5>
+                                    <p class="card-text">Donec nec justo eget felis facilisis fermentum. Aliquam
+                                        porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
+                                    <a href="#" class="btn btn-primary">Print</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card m-1">
+                                <div class="card-body bg-light">
+                                    <h5 class="card-title">Invoice #184389</h5>
+                                    <p class="card-text">Donec nec justo eget felis facilisis fermentum. Aliquam
+                                        porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
+                                    <a href="#" class="btn btn-primary">Print</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card m-1">
+                                <div class="card-body bg-light">
+                                    <h5 class="card-title">Invoice #184391</h5>
+                                    <p class="card-text">Donec nec justo eget felis facilisis fermentum. Aliquam
+                                        porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
+                                    <a href="#" class="btn btn-primary">Print</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="report" id="report" style="display: none;">
+                    <h3 class="text-info text-center">Reports</h3>
+                    <hr>
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="contacts" id="contacts" style="display: none;">
+                    <h2 class="text-info text-center">Contacts</h2>
+                    <hr>
+                    <section class="py-5 bg-light">
+                        <div class="container px-5 my-5">
+                            <div class="text-center">
+                                <h2 class="fw-bolder">Our team</h2>
+                                <p class="lead fw-normal text-muted mb-5">Dedicated to quality and your success</p>
+                            </div>
+                            <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+                                <div class="col mb-5 mb-5 mb-xl-0">
+                                    <div class="text-center">
+                                        <img class="img-fluid rounded-circle mb-4 px-4"
+                                            src="https://dummyimage.com/150x150/ced4da/6c757d" alt="...">
+                                        <h5 class="fw-bolder">Ibbie Eckart</h5>
+                                        <div class="fst-italic text-muted">Founder &amp; CEO</div>
+                                    </div>
+                                </div>
+                                <div class="col mb-5 mb-5 mb-xl-0">
+                                    <div class="text-center">
+                                        <img class="img-fluid rounded-circle mb-4 px-4"
+                                            src="https://dummyimage.com/150x150/ced4da/6c757d" alt="...">
+                                        <h5 class="fw-bolder">Arden Vasek</h5>
+                                        <div class="fst-italic text-muted">CFO</div>
+                                    </div>
+                                </div>
+                                <div class="col mb-5 mb-5 mb-sm-0">
+                                    <div class="text-center">
+                                        <img class="img-fluid rounded-circle mb-4 px-4"
+                                            src="https://dummyimage.com/150x150/ced4da/6c757d" alt="...">
+                                        <h5 class="fw-bolder">Toribio Nerthus</h5>
+                                        <div class="fst-italic text-muted">Operations Manager</div>
+                                    </div>
+                                </div>
+                                <div class="col mb-5">
+                                    <div class="text-center">
+                                        <img class="img-fluid rounded-circle mb-4 px-4"
+                                            src="https://dummyimage.com/150x150/ced4da/6c757d" alt="...">
+                                        <h5 class="fw-bolder">Malvina Cilla</h5>
+                                        <div class="fst-italic text-muted">CTO</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
-            <!-- Main content page -->
-            <div class="col-md-10 ml-auto" style="overflow:hidden ;">
-                <main role="main" class="px-4" id="main" style="height: auto;">
-                    <div class="home" id="home">
-                        <h2 class="text-info">Home</h2>
-                        <hr>
-                        <section class="py-5 bg-light" id="scroll-target">
-                            <div class="container px-5 my-5">
-                                <div class="row gx-5 align-items-center">
-                                    <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0"
-                                            src="https://dummyimage.com/600x400/343a40/6c757d" alt="..."></div>
-                                    <div class="col-lg-6">
-                                        <h2 class="fw-bolder">Our founding</h2>
-                                        <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet consectetur
-                                            adipisicing elit. Iusto est, ut esse a labore aliquam beatae expedita.
-                                            Blanditiis impedit numquam libero molestiae et fugit cupiditate, quibusdam
-                                            expedita, maiores eaque quisquam.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <section class="py-5">
-                            <div class="container px-5 my-5">
-                                <div class="row gx-5 align-items-center">
-                                    <div class="col-lg-6 order-first order-lg-last"><img
-                                            class="img-fluid rounded mb-5 mb-lg-0"
-                                            src="https://dummyimage.com/600x400/343a40/6c757d" alt="..."></div>
-                                    <div class="col-lg-6">
-                                        <h2 class="fw-bolder">Growth &amp; beyond</h2>
-                                        <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet consectetur
-                                            adipisicing elit. Iusto est, ut esse a labore aliquam beatae expedita.
-                                            Blanditiis impedit numquam libero molestiae et fugit cupiditate, quibusdam
-                                            expedita, maiores eaque quisquam.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-                    </div>
-                    <div class="candidate" id="candidate" zzz style="display: none;">
-                        <h3 class="text-info">Candidates</h3>
-                        <hr>
-                        <table class="table table-secondary">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">First</th>
-                                    <th scope="col">Last</th>
-                                    <th scope="col">Position</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>Project Manager</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>JS developer</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>Bird</td>
-                                    <td>Back-end developer</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Martin</td>
-                                    <td>Smith</td>
-                                    <td>Back-end developer</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>Kate</td>
-                                    <td>Mayers</td>
-                                    <td>Scrum master</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="invoice" id="invoice" style="display:none;">
-                        <h3 class="text-info">Invoice</h3>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="card m-1">
-                                    <div class="card-body bg-light">
-                                        <h5 class="card-title">Invoice #184382</h5>
-                                        <p class="card-text">Donec nec justo eget felis facilisis fermentum. Aliquam
-                                            porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
-                                        <a href="#" class="btn btn-primary">Print</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="card m-1">
-                                    <div class="card-body bg-light">
-                                        <h5 class="card-title">Invoice #184386</h5>
-                                        <p class="card-text">Donec nec justo eget felis facilisis fermentum. Aliquam
-                                            porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
-                                        <a href="#" class="btn btn-primary">Print</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="card m-1">
-                                    <div class="card-body bg-light">
-                                        <h5 class="card-title">Invoice #184389</h5>
-                                        <p class="card-text">Donec nec justo eget felis facilisis fermentum. Aliquam
-                                            porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
-                                        <a href="#" class="btn btn-primary">Print</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="card m-1">
-                                    <div class="card-body bg-light">
-                                        <h5 class="card-title">Invoice #184391</h5>
-                                        <p class="card-text">Donec nec justo eget felis facilisis fermentum. Aliquam
-                                            porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
-                                        <a href="#" class="btn btn-primary">Print</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="report" id="report" style="display: none;">
-                        <h3 class="text-info">Reports</h3>
-                        <hr>
-                        <canvas id="myChart"></canvas>
-                    </div>
-                    <div class="contacts" id="contacts" style="display: none;">
-                        <h2 class="text-info">Contacts</h2>
-                        <hr>
-                        <section class="py-5 bg-light">
-                            <div class="container px-5 my-5">
-                                <div class="text-center">
-                                    <h2 class="fw-bolder">Our team</h2>
-                                    <p class="lead fw-normal text-muted mb-5">Dedicated to quality and your success</p>
-                                </div>
-                                <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
-                                    <div class="col mb-5 mb-5 mb-xl-0">
-                                        <div class="text-center">
-                                            <img class="img-fluid rounded-circle mb-4 px-4"
-                                                src="https://dummyimage.com/150x150/ced4da/6c757d" alt="...">
-                                            <h5 class="fw-bolder">Ibbie Eckart</h5>
-                                            <div class="fst-italic text-muted">Founder &amp; CEO</div>
-                                        </div>
-                                    </div>
-                                    <div class="col mb-5 mb-5 mb-xl-0">
-                                        <div class="text-center">
-                                            <img class="img-fluid rounded-circle mb-4 px-4"
-                                                src="https://dummyimage.com/150x150/ced4da/6c757d" alt="...">
-                                            <h5 class="fw-bolder">Arden Vasek</h5>
-                                            <div class="fst-italic text-muted">CFO</div>
-                                        </div>
-                                    </div>
-                                    <div class="col mb-5 mb-5 mb-sm-0">
-                                        <div class="text-center">
-                                            <img class="img-fluid rounded-circle mb-4 px-4"
-                                                src="https://dummyimage.com/150x150/ced4da/6c757d" alt="...">
-                                            <h5 class="fw-bolder">Toribio Nerthus</h5>
-                                            <div class="fst-italic text-muted">Operations Manager</div>
-                                        </div>
-                                    </div>
-                                    <div class="col mb-5">
-                                        <div class="text-center">
-                                            <img class="img-fluid rounded-circle mb-4 px-4"
-                                                src="https://dummyimage.com/150x150/ced4da/6c757d" alt="...">
-                                            <h5 class="fw-bolder">Malvina Cilla</h5>
-                                            <div class="fst-italic text-muted">CTO</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                    
-                </main>
-            </div>
+            
+            
         </div>
     </div>
 
-    <script>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
+    integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
 
-        var candidate = document.getElementById("candidate");
+var candidate = document.getElementById("candidate");
         var invoice = document.getElementById("invoice");
         var report = document.getElementById("report");
         var home = document.getElementById("home");
         var contacts = document.getElementById("contacts");
+
+        var sidebarBtn = document.getElementById("sidebarCollapse");
+        var sidebar = document.getElementById("sidebar");
+
+        sidebarBtn.onclick = () => {
+            sidebar.classList.toggle("active");
+        }
 
         function createChart() {
             var ctx = document.getElementById("myChart").getContext("2d");
@@ -325,20 +343,7 @@
             }
 
         }
-
     </script>
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
-        integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
