@@ -1,3 +1,93 @@
+var count = 0;
+var res = 0;
+var answer = [];
+
+$("document").ready(() => {
+
+    $("#numberHeading").hide();
+    $("#main").hide();
+    $("#result").hide();
+
+    $(".startBtn").click(() => {
+        // console.log("click");
+        $("#quizFinish").hide();
+        $(".option").removeClass("active");
+        $("#result").hide();
+        $(".startBtn").hide();
+        $("#numberHeading").show();
+        $("#main").show();
+        $("#finish").hide();
+        $("#next").show();
+        $("#next").addClass("disabled");
+        count = 0;
+        res = 0;
+        getQuestion();
+    });
+    
+    $(".option").click(function () {
+        
+        $(this).addClass("active");
+        $(this).siblings().removeClass("active");
+        answer[count] = $(this).html();
+        $("#next").removeClass("disabled");
+        // console.log(answer)
+    });
+
+    $("#next").click(() => {
+        count++;
+        getQuestion();
+        $("#next").addClass("disabled");
+        $(".option").removeClass("active");
+        if(count >= questions.length-1) {
+            $("#next").hide();
+            $("#finish").show();
+            $("#finish").addClass("disabled");
+            $(".option").click(() => {
+                $("finish").show();
+                $("#finish").removeClass("disabled");
+            });
+            
+        }
+    });
+
+    $("#finish").on('click', () =>{
+        getResult();
+        $("#main").hide();
+        $("#quizFinish").show();
+        $("#numberHeading").hide();
+        $(".startBtn").show();
+        $("#firstStart").hide();
+    });
+    
+});
+
+function getResult(){
+
+    console.log(answer);
+    for(var i = 0 ; i < 5 ; i++){
+        if(answer[i] == questions[i].answer){
+            res += 1;
+        }
+
+        $("#marks").text(res);
+        $("#result").show();
+        
+    }
+
+}
+
+function getQuestion(){
+    $("#number").text(questions[count].no);
+    $("#question").text(questions[count].que);
+    
+    $("#option1").text(questions[count].options[0]);
+    $("#option2").text(questions[count].options[1]);
+    $("#option3").text(questions[count].options[2]);
+    $("#option4").text(questions[count].options[3]);
+
+    
+}
+
 var questions = [
     {
         "no": 1,
@@ -55,131 +145,3 @@ var questions = [
         ]
     }
 ];
-
-var answer = []
-var count = 0;
-var res = 0;
-
-
-$("document").ready(() => {
-
-    $("#main").hide();
-    $("#result").hide();
-    $("#numberHeading").hide();
-    // buttonManager();
-
-    $("#startBtn").click(function startQuiz() {
-      
-        buttonManager(count);
-
-        $("#main").show();
-        $("#finish").hide();
-        $(".start_page").hide();
-        $("#quizHeading").hide();
-        $("#numberHeading").show();
-        getQuestion(questions, count);
-
-        $(".option").click(function () {
-            // console.log(this);
-            $(this).addClass("active");
-            $(this).siblings().removeClass("active");
-            answer[count] = $(this).html();
-            // console.log(answer)
-            $("#next").show();
-        });
-
-        $('#next').click(function () {
-            if (count > answer.length - 1) {
-                alert("No answer selected");
-            }
-            else {
-                count++;
-                getQuestion(questions, count);
-                $(".option").removeClass("active");
-                buttonManager(count);
-                selectedAnswer(questions, count);
-            }
-        });
-    });
-
-    $("#finish").click(() => {
-        if (count > answer.length - 1) {
-            alert("No answer selected");
-        } else {
-            $("#main").hide();
-            $("#result").show();
-            $("#quizHeading").show().text("You completed the quiz!!");
-            $("#numberHeading").hide();
-            generateResult(questions);
-            $("#startBtn").show();
-        }
-    });
-
-    $("#startAgain").click(() => {
-        $("#result").hide();
-        $(".start_page").show();
-        $("#quizHeading").show().text("Quiz");
-        $("#numberHeading").hide();
-        res = 0;
-        count = 0;
-        answer = [];
-    })
-
-});
-
-function buttonManager(count) {
-    console.log(count + " in buttonManager")
-    if (count > 0) {
-        $("#next").show();
-        if (count == 4) {
-            $("#next").hide();
-            $("#finish").show();
-        }
-    }
-}
-
-function generateResult(questions) {
-    // console.log(answer)
-    for (var i = 0; i < answer.length; i++) {
-        // console.log(answer[i]);
-        // console.log(questions[i].answer);
-
-        if (answer[i] == questions[i].answer) {
-            res += 1;
-            // console.log(res);
-        }
-    }
-
-    $("#marks").text(res);
-    var percentage = res / 5 * 100;
-    $("#percentage").text(percentage + "%");
-    res = 0;
-    count = 0;
-    answer = [];
-    console.log(count);
-    console.log(answer);
-}
-
-function getQuestion(questions, count) {
-    var question = questions[count];
-    $("#number").text(question.no);
-    $("#question").text(question.que);
-    $("#option1").text(question.options[0]);
-    $("#option2").text(question.options[1]);
-    $("#option3").text(question.options[2]);
-    $("#option4").text(question.options[3]);
-}
-
-function selectedAnswer(question) {
-    var question = questions[count];
-
-    for (var i = 0; i < 4; i++) {
-        var a = document.getElementById("options").children;
-        if (a[i].innerHTML == answer[count]) {
-            $("#options").children("button")[i].classList.add("active");
-        }
-        else {
-            $("#options").children("button")[i].classList.remove("active");
-        }
-    }
-}
