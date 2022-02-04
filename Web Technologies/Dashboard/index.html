@@ -9,13 +9,18 @@
     <title>Admin Panel</title>
 
     <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="style.css">
 
     <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -23,8 +28,8 @@
         <!-- Sidebar  -->
         <nav id="sidebar" style="position:relative;">
 
-            <ul class="list-unstyled components" >
-                
+            <ul class="list-unstyled components">
+
                 <li class="mb-3">
                     <a href="#home" class="text-light" onclick="setVisibility(4)">Home</a>
                 </li>
@@ -51,12 +56,11 @@
                         <i class="fas fa-align-left"></i>
                         <span>Toggle Sidebar</span>
                     </button>
+                    <h2 class="text-info justify-content-center" id="title">Home</h2>
                 </div>
             </nav>
             <div id="main">
-                <div class="home" id="home">
-                    <h2 class="text-info text-center">Home</h2>
-                    <hr>
+                <div class="home" id="home" name="Home">
                     <section class="py-5 bg-light" id="scroll-target">
                         <div class="container px-5 my-5">
                             <div class="row gx-5 align-items-center">
@@ -88,11 +92,9 @@
                             </div>
                         </div>
                     </section>
-    
+
                 </div>
-                <div class="candidate" id="candidate" zzz style="display: none;">
-                    <h3 class="text-info text-center">Candidates</h3>
-                    <hr>
+                <div class="candidate" id="candidate" name="Candidates" style="display: none;">
                     <table class="table table-secondary">
                         <thead>
                             <tr>
@@ -136,9 +138,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="invoice" id="invoice" style="display:none;">
-                    <h3 class="text-info text-center">Invoice</h3>
-                    <hr>
+                <div class="invoice" id="invoice" name="Invoices" style="display:none;">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="card m-1">
@@ -161,7 +161,7 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="card m-1">
@@ -185,14 +185,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="report" id="report" style="display: none;">
-                    <h3 class="text-info text-center">Reports</h3>
-                    <hr>
+                <div class="report" id="report" name="Report" style="display: none;">
                     <canvas id="myChart"></canvas>
                 </div>
-                <div class="contacts" id="contacts" style="display: none;">
+                <div class="contacts" id="contacts" name="Contacts" style="display: none;">
                     <h2 class="text-info text-center">Contacts</h2>
-                    <hr>
                     <section class="py-5 bg-light">
                         <div class="container px-5 my-5">
                             <div class="text-center">
@@ -237,27 +234,35 @@
                     </section>
                 </div>
             </div>
-            
-            
+
+
         </div>
     </div>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
     <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"
-    integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <script type="text/javascript">
 
-var candidate = document.getElementById("candidate");
+        var candidate = document.getElementById("candidate");
         var invoice = document.getElementById("invoice");
         var report = document.getElementById("report");
         var home = document.getElementById("home");
         var contacts = document.getElementById("contacts");
+        var title = document.getElementById("title");
 
         var sidebarBtn = document.getElementById("sidebarCollapse");
         var sidebar = document.getElementById("sidebar");
@@ -305,6 +310,7 @@ var candidate = document.getElementById("candidate");
                 contacts.style.visibility = "hidden";
                 candidate.style.visibility = 'Visible';
                 document.getElementById("main").innerHTML = candidate.innerHTML;
+                title.innerHTML = candidate.getAttribute('name');
             }
 
             if (i == 2) {
@@ -314,6 +320,7 @@ var candidate = document.getElementById("candidate");
                 contacts.style.visibility = "hidden";
                 invoice.style.visibility = 'visible';
                 document.getElementById("main").innerHTML = invoice.innerHTML;
+                title.innerHTML = invoice.getAttribute('name');
             }
             if (i == 3) {
                 console.log(report)
@@ -323,6 +330,7 @@ var candidate = document.getElementById("candidate");
                 contacts.style.visibility = "hidden";
                 report.style.visibility = 'visible';
                 document.getElementById("main").innerHTML = report.innerHTML;
+                title.innerHTML = report.getAttribute('name');
                 createChart();
             }
             if (i == 4) {
@@ -332,6 +340,7 @@ var candidate = document.getElementById("candidate");
                 contacts.style.visibility = "visible";
                 home.style.visibility = "visible";
                 document.getElementById("main").innerHTML = home.innerHTML;
+                title.innerHTML = home.getAttribute('name');
             }
             if (i == 5) {
                 candidate.style.visibility = 'hidden';
@@ -340,6 +349,7 @@ var candidate = document.getElementById("candidate");
                 home.style.visibility = "hidden";
                 contacts.style.visibility = "visible";
                 document.getElementById("main").innerHTML = contacts.innerHTML;
+                title.innerHTML = contacts.getAttribute('name');
             }
 
         }
