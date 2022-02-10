@@ -6,16 +6,25 @@ const app = express();
 app.use(express.json());
 
 var users = [];
-fs.readFile('./data.json', 'utf-8', (error, data) => {
-  console.log("lodded");
+
+fs.readFile("./data.json", function (error, data) {
   if (error) {
-    console.log(`Couldnt read file ${error}`);
+    console.log(`Couldn't open file ${error}`);
   }
   else {
-    users = JSON.parse(data);
-  }
+    if (data == '') {
 
+      fs.writeFile("./data.json", JSON.stringify(users), 'utf8', (error) => {
+
+        console.log("Initiated file successfully...");
+      });
+    }
+    else {
+      users = JSON.parse(data);
+    }
+  }
 });
+
 
 // View root
 app.get('/', (req, res) => {
@@ -58,7 +67,7 @@ app.post('/api/users', (req, res) => {
   users.push(user);
   var temp = JSON.stringify(users);
   console.log(typeof (temp));
-  
+
   fs.writeFile("./data.json", JSON.stringify(users), "utf-8", (error) => {
     if (error) {
       console.log(error);
@@ -73,7 +82,7 @@ app.post('/api/users', (req, res) => {
 app.put('/api/users/:id', (req, res) => {
   // Getting user  
   const user = users.find(u => u.id === parseInt(req.params.id));
-  
+
   // Validating user // Optional
   if (!user) return res.status(404).send("User does not exist!");
   const { error } = validateData(req.body);
