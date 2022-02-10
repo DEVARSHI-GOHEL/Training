@@ -82,6 +82,9 @@ app.put('/api/users/:id', (req, res) => {
     return;
   }
 
+  const index = users.indexOf(user);
+  users.splice(index, 1);
+
   // Update data
   user.name = req.body.name;
   user.password = req.body.password;
@@ -91,7 +94,9 @@ app.put('/api/users/:id', (req, res) => {
   user.country = req.body.country;
   user.phone = req.body.phone;
 
-  fs.writeFile("./data.json", JSON.stringify(user), "utf-8", (error) => {
+  users.push(user);
+
+  fs.writeFile("./data.json", JSON.stringify(users), "utf-8", (error) => {
     if (error) {
       console.log(error);
     } else {
